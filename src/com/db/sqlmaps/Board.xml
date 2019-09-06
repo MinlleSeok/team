@@ -23,7 +23,7 @@
 	
 	<select id="getArticleNum" parameterClass="int" remapResults="true" resultClass="int">
 		<![CDATA[
-			SELECT ifnull(max(num),0) from board WHERE moimNum = #moimNum#
+			SELECT ifnull(max(idx),0) FROM board WHERE moimNum = #moimNum#
 		]]>
 	</select>
 	

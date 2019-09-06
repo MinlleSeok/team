@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.board.db.BoardDAO;
 import com.board.db.Files;
+import com.comments.db.CommentsDAO;
 import com.controller.action.CommandAction;
 
 /*
@@ -34,16 +35,21 @@ public class DeleteAction implements CommandAction {
 		for (int i = 0; i < filesList.size(); i++) {
 			String filename = filesList.get(i).getFilename();
 			String uploadFileName = request.getRealPath("/upload") + "/" + filename;
+			String uploadFileName2 = request.getRealPath("/upload") + "/tn_" + filename.substring(3);
 			File uploadfile = new File(uploadFileName);
-			
+			File uploadfile2 = new File(uploadFileName2);
 			if (uploadfile.exists() && uploadfile.isFile()) {
 				uploadfile.delete();
 				BoardDAO.getInstance().deleteFile(filesList.get(i).getNum());
 			}
+			if (uploadfile2.exists() && uploadfile2.isFile()) {
+				uploadfile2.delete();
+			}
 		}
 		
 		BoardDAO.getInstance().deleteArticle(map);
-
+		CommentsDAO.getInstance().deleteComments(map);
+		
 		request.setAttribute("url", "list.do?moimNum="+moimNum);
 
 		return "redirect2.jsp";

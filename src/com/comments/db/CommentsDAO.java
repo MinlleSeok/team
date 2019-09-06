@@ -106,4 +106,8 @@ public class CommentsDAO extends IbatisDAO {
 		GetDB().update("updateReComment", map);
 	}
 
+	public void deleteComments(HashMap<String, Object> map) throws SQLException {
+		GetDB().delete("deleteComments", map);
+	}
+
 }

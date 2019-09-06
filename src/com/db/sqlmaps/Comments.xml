@@ -97,6 +97,12 @@
 		]]>
 	</delete>
 	
+	<delete id="deleteComments" parameterClass="hmap">
+		<![CDATA[
+			DELETE FROM comments WHERE idx = #idx# AND moimNum = #moimNum#
+		]]>
+	</delete>
+	
 	<select id="getCommentUser" parameterClass="hmap" resultClass="str" remapResults="true">
 		<![CDATA[
 			SELECT writer FROM comments WHERE num = #reNum# and idx = #idx# and moimNum = #moimNum#
