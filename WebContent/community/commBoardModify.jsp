@@ -10,7 +10,7 @@
 <form action="modifyFinish.bo" method="post" id="fr" onsubmit='return filesListing();'>
 	<input type="hidden" name="moimNum" id="moimNum" value="${param.moimNum}"> 
 	<input type="hidden" name="idx" id="idx" value="${param.idx}"> 
-	<input type="hidden" name="writer" value="<%=(String)session.getAttribute("userNickName")%>">
+	<input type="hidden" name="writer" id="writer" value="<%=(String)session.getAttribute("userNickName")%>">
 	
 		<div class="writeTop">
 			<div class="picUpBtnWrap">

@@ -35,7 +35,7 @@
 <div class="writeBackground">
 	<form action="insert.do" method="post" id="fr" onsubmit='return filesListing();'>
 	<input type="hidden" name="moimNum" id="moimNum" value="${param.moimNum}"> 
-	<input type="hidden" name="writer" value="<%=(String)session.getAttribute("userNickName")%>"> 
+	<input type="hidden" name="writer" id="writer" value="<%=(String)session.getAttribute("userNickName")%>"> 
 	
 		<div class="writeTop">
 			<div class="picUpBtnWrap">

@@ -21,7 +21,7 @@
 	
 	<select id="getCommunity" resultClass="com">
 		<![CDATA[
-			SELECT * FROM community
+			SELECT * FROM community where num >= 10000
 		]]>
 	</select>
 	
@@ -33,7 +33,7 @@
 	
 	<select id="getCommCount" resultClass="int">
 		<![CDATA[
-			SELECT count(num) FROM community
+			SELECT ifnull(max(num),10000) FROM community where num >= 10000
 		]]>
 	</select>
 	

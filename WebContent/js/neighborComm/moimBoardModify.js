@@ -288,6 +288,7 @@ function filesListing() {
 	var formData = new FormData();
 	var moimNum = document.getElementById("moimNum").value;
 	var idx = getParameterByName('idx');
+	var writer = document.getElementById("writer").value;
 	
 	// 배열의 파일 값, 가상 폼의 input으로 넘길 for문
 	for (var i = 0; i < sel_files.length; i++) {
@@ -299,6 +300,7 @@ function filesListing() {
 	formData.append("moimNum", moimNum);
 	formData.append("image_count", sel_files.length);
 	formData.append("idx", idx);
+	formData.append("writer", writer);
 	
 	// ajax
 	var xhttp = new XMLHttpRequest();

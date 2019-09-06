@@ -25,7 +25,7 @@ public class RequestBoardAction implements CommandAction {
 		System.out.println(category);
 		
 		int count = CommunityDAO.getInstance().getCommCount();
-		count += 10000 + 1;
+		count += 1;
 		
 		Community com = new Community();
 		com.setNum(count);
